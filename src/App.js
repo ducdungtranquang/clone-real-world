@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home';
+import LoginPage from './pages/LoginPage';
+import RegisPage from './pages/RegisPage';
+import ProfilePage from './pages/ProfilePage';
+import SettingPage from './pages/SettingPage';
+import CreateArticle from './pages/CreateArticle';
+import Article from './pages/Article';
+import { useState } from 'react';
+import LoginContext from './context/LoginContext';
+import EditArticle from './pages/EditArticle';
+import Header from './components/Header';
 
 function App() {
+  const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken")!==undefined&&localStorage.getItem("accessToken")!==null?localStorage.getItem("accessToken"):"");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LoginContext.Provider value={{ accessToken, setAccessToken }}>
+      <Header accessToken={accessToken} />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisPage />} />
+        <Route path='/profile/:user' element={<ProfilePage />} />
+        <Route path='/setting' element={<SettingPage />} />
+        <Route path='/new-article' element={<CreateArticle />} />
+        <Route path='/article/:slug' element={<Article />} />
+        <Route path='/articles/:slug' element={<EditArticle />} />
+      </Routes>
+    </LoginContext.Provider>
   );
 }
 
