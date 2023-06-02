@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/clone-real-world/static/css/main.073c9b0a.css",
+    "main.js": "/clone-real-world/static/js/main.775afe16.js",
+    "static/js/787.0d870158.chunk.js": "/clone-real-world/static/js/787.0d870158.chunk.js",
+    "index.html": "/clone-real-world/index.html",
+    "main.073c9b0a.css.map": "/clone-real-world/static/css/main.073c9b0a.css.map",
+    "main.775afe16.js.map": "/clone-real-world/static/js/main.775afe16.js.map",
+    "787.0d870158.chunk.js.map": "/clone-real-world/static/js/787.0d870158.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.775afe16.js"
+  ]
+}
